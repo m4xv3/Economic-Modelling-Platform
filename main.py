@@ -49,11 +49,28 @@ class ManufacturingSector(EconomicSector):
             employed_workers=4_800_000,
             capital_stock=2_000_000_000_000,
             productivity=25,
-            labour_weight=0.4,
-            capital_weight=0.6
+            labour_weight = 0.4,
+            capital_weight = 0.6
         )
 
-manufacturing = ManufacturingSector()
+class ServiceSector(EconomicSector):
+    def __init__(self):
+        super().__init__(
+            labour_force = 15_000_000,
+            employed_workers = 14_400_000,
+            capital_stock = 3_000_000_000_000,
+            productivity = 30,
+            labour_weight = 0.8,
+            capital_weight = 0.2,
+        )
 
-print(manufacturing.employment_rate())
-print(manufacturing.produce(500_000_000_000))
+class AgricultureSector(EconomicSector):
+    def __init__(self):
+        super().__init__(
+            labour_force = 10_000_000,
+            employed_workers = 9_000_000,
+            capital_stock = 2_500_000_000_000,
+            productivity = 20,
+            labour_weight = 0.6,
+            capital_weight = 0.4,
+        )
