@@ -23,3 +23,20 @@ class CentralBank:
         else:
             self.policy_stance = "neutral"
 
+class FirmSector:
+    def __init__(self):
+        self.labour_force = 25_000_000
+        self.employed_workers = 23_750_000
+        self.capital_stock = 5_000_000_000_000
+        self.productivity = 1
+        self.labour_weight = 0.7
+        self.capital_weight = 0.3
+
+    def produce(self, demand):
+        #recieve demand
+        #calculate potential output
+        # determine actual output
+
+        
+    def employment_rate(self):
+        employment_rate = self.employed_workers/self.labour_force
