@@ -23,20 +23,37 @@ class CentralBank:
         else:
             self.policy_stance = "neutral"
 
-class FirmSector:
-    def __init__(self):
-        self.labour_force = 25_000_000
-        self.employed_workers = 23_750_000
-        self.capital_stock = 5_000_000_000_000
-        self.productivity = 1
-        self.labour_weight = 0.7
-        self.capital_weight = 0.3
+class EconomicSector:
+    def __init__(self, labour_force, employed_workers, capital_stock, productivity, labour_weight, capital_weight):
+        self.labour_force = labour_force
+        self.employed_workers = employed_workers
+        self.capital_stock = capital_stock
+        self.productivity = productivity
+        self.labour_weight = labour_weight
+        self.capital_weight = capital_weight
 
     def produce(self, demand):
-        #recieve demand
-        #calculate potential output
-        # determine actual output
-
+        potential_output = (
+            self.productivity * (self.employed_workers ** self.labour_weight) * (self.capital_stock ** self.capital_weight)
+            )
+        actual_output = min(potential_output, demand)
+        return actual_output
         
     def employment_rate(self):
-        employment_rate = self.employed_workers/self.labour_force
+        return self.employed_workers/self.labour_force
+
+class ManufacturingSector(EconomicSector):
+    def __init__(self):
+        super().__init__(
+            labour_force=5_000_000,
+            employed_workers=4_800_000,
+            capital_stock=2_000_000_000_000,
+            productivity=25,
+            labour_weight=0.4,
+            capital_weight=0.6
+        )
+
+manufacturing = ManufacturingSector()
+
+print(manufacturing.employment_rate())
+print(manufacturing.produce(500_000_000_000))
