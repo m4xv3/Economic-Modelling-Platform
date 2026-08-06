@@ -67,10 +67,21 @@ class ServiceSector(EconomicSector):
 class AgricultureSector(EconomicSector):
     def __init__(self):
         super().__init__(
-            labour_force = 10_000_000,
-            employed_workers = 9_000_000,
+            labour_force = 1_000_000,
+            employed_workers = 900_000,
             capital_stock = 2_500_000_000_000,
             productivity = 20,
             labour_weight = 0.6,
             capital_weight = 0.4,
+        )
+class TechnologySector(EconomicSector):
+    def __init__(self):
+        super().__init__(
+            labour_force = 3_000_000,
+            employed_workers = 2_500_000,
+            capital_stock=1_500_000_000_000,
+            productivity=60,
+            labour_weight = 0.6,
+            capital_weight = 0.4
+
         )
