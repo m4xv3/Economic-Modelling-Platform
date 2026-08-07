@@ -1,6 +1,7 @@
-from Economy import Economy
+from economy import Economy
 
 economy = Economy()
 
-print("Employment rate:", economy.calculate_employment())
+print("Employment:", economy.calculate_employment())
 print("GDP:", economy.calculate_gdp())
+print("Consumption:", economy.calculate_consumption())

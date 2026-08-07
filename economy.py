@@ -1,20 +1,32 @@
-from CentralBank import CentralBank
-from Sectors import (
+from central_bank import CentralBank
+
+from sectors import (
     ManufacturingSector,
     ServiceSector,
     AgricultureSector,
     TechnologySector
 )
+
+from households import (
+    LowIncomeHouseholds,
+    MiddleIncomeHouseholds,
+    HighIncomeHouseholds
+)
+
 class Economy:
     def __init__(self):
         self.gdp = 0
 
-        self.centralBank = CentralBank()
+        self.central_bank = CentralBank()
 
         self.manufacturing = ManufacturingSector()
         self.services = ServiceSector()
         self.agriculture = AgricultureSector()
         self.technology = TechnologySector()
+
+        self.low_income_households = LowIncomeHouseholds()
+        self.middle_income_households = MiddleIncomeHouseholds()
+        self.high_income_households = HighIncomeHouseholds()
 
     def calculate_gdp(self):
         manufacturing_output = self.manufacturing.produce(300_000_000_000)
@@ -47,3 +59,11 @@ class Economy:
         )
 
         return total_employed / total_labour_force
+
+    def calculate_consumption(self):
+        total_consumption = (
+            self.low_income_households.calculate_consumption()
+            + self.middle_income_households.calculate_consumption()
+            + self.high_income_households.calculate_consumption()
+        )
+        return total_consumption
