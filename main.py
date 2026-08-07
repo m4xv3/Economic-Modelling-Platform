@@ -2,6 +2,7 @@ from economy import Economy
 
 economy = Economy()
 
-print("Employment:", economy.calculate_employment())
-print("GDP:", economy.calculate_gdp())
+economy.distribute_income()
+
+print("Total income:", economy.calculate_total_income())
 print("Consumption:", economy.calculate_consumption())

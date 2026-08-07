@@ -43,6 +43,21 @@ class Economy:
         return self.gdp
         #GDP = consumption + investment + government spending + (ex - im)
 
+    def distribute_income(self):
+        total_income = self.calculate_total_income()
+
+        self.low_income_households.receive_income(
+            total_income * 0.2
+            )  
+
+        self.middle_income_households.receive_income(
+            total_income * 0.5
+            )
+
+        self.high_income_households.receive_income(
+            total_income * 0.3
+            )
+        
     def calculate_employment(self):
         total_labour_force = (
             self.manufacturing.labour_force
@@ -69,7 +84,7 @@ class Economy:
         return total_consumption
 
     def calculate_total_income(self):
-        
+
         total_income = (
             self.manufacturing.calculate_wage_bill()
             + self.services.calculate_wage_bill()
