@@ -67,3 +67,14 @@ class Economy:
             + self.high_income_households.calculate_consumption()
         )
         return total_consumption
+
+    def calculate_total_income(self):
+        
+        total_income = (
+            self.manufacturing.calculate_wage_bill()
+            + self.services.calculate_wage_bill()
+            + self.agriculture.calculate_wage_bill()
+            + self.technology.calculate_wage_bill()
+            )
+
+        return total_income

@@ -1,11 +1,22 @@
 class EconomicSector:
-    def __init__(self, labour_force, employed_workers, capital_stock, productivity, labour_weight, capital_weight):
+    def __init__(
+            self,
+            labour_force,
+            employed_workers,
+            capital_stock,
+            productivity,
+            labour_weight,
+            capital_weight,
+            average_wage
+            ):  
+         
         self.labour_force = labour_force
         self.employed_workers = employed_workers
         self.capital_stock = capital_stock
         self.productivity = productivity
         self.labour_weight = labour_weight
         self.capital_weight = capital_weight
+        self.average_wage = average_wage
 
     def produce(self, demand):
         potential_output = (
@@ -17,6 +28,10 @@ class EconomicSector:
     def employment_rate(self):
         return self.employed_workers/self.labour_force
 
+    def calculate_wage_bill(self):
+        return self.employed_workers * self.average_wage
+
+
 class ManufacturingSector(EconomicSector):
     def __init__(self):
         super().__init__(
@@ -25,7 +40,8 @@ class ManufacturingSector(EconomicSector):
             capital_stock=2_000_000_000_000,
             productivity=25,
             labour_weight = 0.4,
-            capital_weight = 0.6
+            capital_weight = 0.6,
+            average_wage = 50_000
         )
 
 class ServiceSector(EconomicSector):
@@ -37,6 +53,7 @@ class ServiceSector(EconomicSector):
             productivity = 30,
             labour_weight = 0.8,
             capital_weight = 0.2,
+            average_wage = 45_000
         )
 
 class AgricultureSector(EconomicSector):
@@ -48,6 +65,7 @@ class AgricultureSector(EconomicSector):
             productivity = 20,
             labour_weight = 0.6,
             capital_weight = 0.4,
+            average_wage=30_000
         )
 
 class TechnologySector(EconomicSector):
@@ -58,6 +76,6 @@ class TechnologySector(EconomicSector):
             capital_stock=1_500_000_000_000,
             productivity=60,
             labour_weight = 0.6,
-            capital_weight = 0.4
-
+            capital_weight = 0.4,
+            average_wage = 80_000
         )

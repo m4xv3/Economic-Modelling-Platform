@@ -7,8 +7,11 @@ class Household:
         self.savings = 0
 
     def calculate_consumption(self):
-        self.savings = self.income * self.savings_rate
-        self.consumption = self.income - self.savings
+        total_income = self.population * self.income
+
+        self.savings = total_income * self.savings_rate
+        self.consumption = total_income - self.savings
+
         return self.consumption
 
 
