@@ -18,22 +18,22 @@ class Household:
 
 
 class LowIncomeHouseholds(Household):
-    def __init__(self):
+    def __init__(self, profile):
         super().__init__(
             population = 10_000_000,
-            savings_rate = 0.05
+            savings_rate = profile["households"]["low_income_savings_rate"]
             )
 
 class MiddleIncomeHouseholds(Household):
-    def __init__(self):
+    def __init__(self, profile):
         super().__init__(
             population = 30_000_000,
-            savings_rate = 0.1
+            savings_rate = profile["households"]["middle_income_savings_rate"]
         )
 
 class HighIncomeHouseholds(Household):
-    def __init__(self):
+    def __init__(self, profile):
         super().__init__(
             population = 10_000_000,
-            savings_rate = 0.2
+            savings_rate = profile["households"]["high_income_savings_rate"]
         )

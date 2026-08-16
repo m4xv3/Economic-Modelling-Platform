@@ -2,9 +2,9 @@ HIGH_INCOME_PROFILE = {
 
     "name" : "High Income Economy",
 
-    "central bank" : {
-        "inflation target" : 0.02,
-        "interest rate" : 0.03
+    "central_bank" : {
+        "inflation_target" : 0.02,
+        "interest_rate" : 0.03
     },
 
     "households" : {
@@ -19,9 +19,9 @@ MIDDLE_INCOME_PROFILE = {
 
     "name" : "Middle Income Economy",
 
-    "central bank" : {
-        "inflation target" : 0.03,
-        "interest rate" : 0.05
+    "central_bank" : {
+        "inflation_target" : 0.03,
+        "interest_rate" : 0.05
     },
 
     "households" : {
@@ -35,9 +35,9 @@ LOW_INCOME_PROFILE = {
 
     "name" : "Low Income Economy",
 
-    "central bank" : {
-        "inflation target" : 0.04,
-        "interest rate" : 0.08
+    "central_bank" : {
+        "inflation_target" : 0.04,
+        "interest_rate" : 0.08
     },
 
     "households" : {

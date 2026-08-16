@@ -29,9 +29,9 @@ class Economy:
         self.agriculture = AgricultureSector()
         self.technology = TechnologySector()
 
-        self.low_income_households = LowIncomeHouseholds()
-        self.middle_income_households = MiddleIncomeHouseholds()
-        self.high_income_households = HighIncomeHouseholds()
+        self.low_income_households = LowIncomeHouseholds(profile)
+        self.middle_income_households = MiddleIncomeHouseholds(profile)
+        self.high_income_households = HighIncomeHouseholds(profile)
 
     def calculate_gdp(self):
         manufacturing_output = self.manufacturing.produce(300_000_000_000)
