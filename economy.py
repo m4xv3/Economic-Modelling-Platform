@@ -12,12 +12,17 @@ from households import (
     MiddleIncomeHouseholds,
     HighIncomeHouseholds
 )
+from profiles import (
+    LOW_INCOME_PROFILE,
+    MIDDLE_INCOME_PROFILE,
+    HIGH_INCOME_PROFILE
+)   
 
 class Economy:
-    def __init__(self):
+    def __init__(self, profile):
         self.gdp = 0
 
-        self.central_bank = CentralBank()
+        self.central_bank = CentralBank(profile)
 
         self.manufacturing = ManufacturingSector()
         self.services = ServiceSector()

@@ -1,7 +1,7 @@
 class CentralBank:
-    def __init__(self):
-        self.inflation_target = 0.02
-        self.policy_interest_rate = 0.03
+    def __init__(self, profile):
+        self.inflation_target = profile["central_bank"]["inflation_target"]
+        self.policy_interest_rate = profile["central_bank"]["interest_rate"]
         self.policy_response_strength = 0.5
         self.inflation_tolerance = 0.005
         self.independence = 0.5
