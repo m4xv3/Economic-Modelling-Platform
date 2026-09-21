@@ -75,7 +75,7 @@ The user creates an economy by selecting variables such as:
 
 Users can introduce events such as:
 
-## Interest Rate Rise
+### Interest Rate Rise
 
 Possible effects:
 
@@ -84,7 +84,7 @@ Possible effects:
 * Reduced inflation
 * Higher unemployment risk
 
-## Tax Cut
+### Tax Cut
 
 Possible effects:
 
@@ -92,7 +92,7 @@ Possible effects:
 * Increased demand
 * Possible inflation increase
 
-## Government Stimulus
+### Government Stimulus
 
 Possible effects:
 
@@ -100,7 +100,7 @@ Possible effects:
 * Higher output
 * Lower unemployment
 
-## Energy Price Shock
+### Energy Price Shock
 
 Possible effects:
 
@@ -108,14 +108,14 @@ Possible effects:
 * Higher prices
 * Reduced purchasing power
 
-## Productivity Increase
+### Productivity Increase
 
 Possible effects:
 
 * Higher output
 * Economic growth
 
-## Demand Crash
+### Demand Crash
 
 Possible effects:
 
